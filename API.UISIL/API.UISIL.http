@@ -1,0 +1,100 @@
+@API.UISIL_HostAddress = http://localhost:5007
+
+GET {{API.UISIL_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+
+################################
+# POST
+# Iniciar sesion en base de datos
+################################
+
+POST {{API.UISIL_HostAddress}}/api/InicioSesion
+Content-Type: application/json
+Accept: application/json
+{
+  "Correo": "renlopez09@gmail.com",
+  "Contrasena": "Patito1234"
+}
+
+################################
+# POST
+# Insertar datos de usuarios
+################################
+
+POST {{API.UISIL_HostAddress}}/api/Usuarios
+Content-Type: application/json
+Accept: application/json
+{
+  "Correo": "renlopez09@gmail.com",
+  "Contrasena": "Patito1234",
+  "IdRol":1,
+  "Nombre":"Alonso",
+  "Apellido1":"Pérez",
+  "Apellido2":"Villa Nueva",
+  "FechaNac":"1998-09-05",
+  "Genero":"Masculino",
+  "Telefono":"+506 44666332",
+  "Direccion":"San Rafael de Heredia"
+
+}
+
+################################
+# POST
+# Insertar datos de usuarios
+################################
+
+POST {{API.UISIL_HostAddress}}/api/Usuarios/ObtenerUsuarioPorId
+Content-Type: application/json
+Accept: application/json
+{
+  "IdUsuario": 1
+}
+
+################################
+# GET
+# Obtener todos los usuarios
+################################
+GET {{API.UISIL_HostAddress}}/api/Usuarios
+Accept: application/json
+
+###
+
+################################
+# PUT
+# Actualiza usuarios por IdUsuario
+################################
+
+PUT {{API.UISIL_HostAddress}}/api/Usuarios/
+Content-Type: application/json
+Accept: application/json
+{
+  "IdUsuario":2,
+  "Correo": "PRUEBAS",
+  "Contrasena": "234",
+  "IdRol":1,
+  "Nombre":"ADMIN",
+  "Apellido1":"ADMIN",
+  "Apellido2":"PRUEBA",
+  "FechaNac":"1998-09-05",
+  "Genero":"NO BINARIO",
+  "Telefono":"+506 44666332",
+  "Direccion":"DATA VOLATIL"
+
+}
+
+
+################################
+# DELETE
+# Elimina usuarios por IdUsuario
+################################
+
+DELETE {{API.UISIL_HostAddress}}/api/Usuarios/
+Content-Type: application/json
+Accept: application/json
+{
+  "IdUsuario":1005
+
+}
