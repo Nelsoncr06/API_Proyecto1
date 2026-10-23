@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="API RESTful desarrollada con ASP.NET Core y .NET 10 para la gestión de usuarios.">
+  <title>API UISIL | Servicio REST</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0b1020;--panel:#121a2e;--line:#263451;--text:#edf3ff;--muted:#a7b5ce;--accent:#65d6ad;--blue:#8bb7ff}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#1b3150 0,transparent 45%),var(--bg);font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+    .wrap{width:min(1040px,calc(100% - 36px));margin:0 auto}.top{padding:26px 0;border-bottom:1px solid #ffffff12}.brand{display:flex;align-items:center;gap:12px;font-weight:750;letter-spacing:.2px}.logo{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(135deg,#65d6ad,#8bb7ff);color:#071323;font-weight:900;font-size:20px}.brand small{display:block;color:var(--muted);font-size:12px;font-weight:500;margin-top:3px;letter-spacing:1.5px;text-transform:uppercase}
+    main{flex:1;padding:68px 0 52px}.hero{max-width:760px}.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid #65d6ad55;background:#65d6ad12;color:var(--accent);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:700}.dot{width:7px;height:7px;background:var(--accent);border-radius:50%;box-shadow:0 0 12px #65d6ad}.hero h1{font-size:clamp(38px,7vw,66px);line-height:1.04;letter-spacing:-2.5px;margin:22px 0 18px}.hero h1 span{color:var(--accent)}.hero p{font-size:18px;line-height:1.7;color:var(--muted);max-width:680px;margin:0}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 17px;border-radius:11px;text-decoration:none;font-weight:750;font-size:14px;transition:transform .15s,opacity .15s}.btn:hover{transform:translateY(-2px)}.primary{background:var(--accent);color:#081323}.secondary{border:1px solid var(--line);color:var(--text);background:#ffffff05}
+    .section-title{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1.7px;margin:0 0 15px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:56px}.endpoint{background:linear-gradient(145deg,#141f36,#101729);border:1px solid var(--line);border-radius:14px;padding:18px;min-width:0}.method{display:inline-block;font:800 11px ui-monospace,SFMono-Regular,Consolas,monospace;padding:5px 8px;border-radius:6px;background:#65d6ad18;color:var(--accent);margin-bottom:11px}.route{font:600 14px ui-monospace,SFMono-Regular,Consolas,monospace;overflow-wrap:anywhere;color:var(--blue)}.desc{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.5}.note{margin-top:22px;color:var(--muted);font-size:13px;line-height:1.6}.note code{color:var(--text)}footer{border-top:1px solid #ffffff12;padding:22px 0;color:#7f8eaa;font-size:12px}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    @media(max-width:620px){main{padding-top:45px}.grid{grid-template-columns:1fr;margin-top:42px}.hero h1{letter-spacing:-1.5px}.hero p{font-size:16px}}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="wrap brand"><div class="logo">A</div><div>API UISIL<small>Servicio REST · .NET 10</small></div></div></header>
+  <main class="wrap">
+    <section class="hero">
+      <div class="pill"><span class="dot"></span> Servicio API disponible en esta dirección</div>
+      <h1>API RESTful para<br><span>gestión de usuarios.</span></h1>
+      <p>Servicio desarrollado con ASP.NET Core y conectado a SQL Server. Proporciona operaciones para registrar, consultar, actualizar y desactivar usuarios, además de validar credenciales de inicio de sesión.</p>
+      <div class="actions">
+        <a class="btn primary" href="/api/Usuarios">Probar endpoint de usuarios <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+    <section aria-labelledby="endpoints-title">
+      <div class="grid">
+        <article class="endpoint"><span class="method">GET</span><div class="route">/api/Usuarios</div><div class="desc">Consultar la lista de usuarios activos.</div></article>
+        <article class="endpoint"><span class="method">POST</span><div class="route">/api/Usuarios</div><div class="desc">Registrar un nuevo usuario enviando un cuerpo JSON.</div></article>
+        <article class="endpoint"><span class="method">POST</span><div class="route">/api/Usuarios/ObtenerUsuarioPorId</div><div class="desc">Consultar un usuario mediante su identificador.</div></article>
+        <article class="endpoint"><span class="method">PUT</span><div class="route">/api/Usuarios</div><div class="desc">Actualizar los datos de un usuario existente.</div></article>
+        <article class="endpoint"><span class="method">DELETE</span><div class="route">/api/Usuarios</div><div class="desc">Desactivar un usuario usando su identificador.</div></article>
+        <article class="endpoint"><span class="method">POST</span><div class="route">/api/InicioSesion</div><div class="desc">Validar las credenciales enviadas en formato JSON.</div></article>
+      </div>
+      <p class="note">Nota: los endpoints que reciben datos deben probarse con un cliente HTTP, como Postman, enviando <code>Content-Type: application/json</code> y el cuerpo correspondiente. Esta página es una portada informativa; no reemplaza la documentación técnica de la API.</p>
+    </section>
+  </main>
+  <footer><div class="wrap foot"><span>API UISIL · Creado por Nelson Castillo - Proyecto académico</span><span>ASP.NET Core · .NET 10 · SQL Server</span></div></footer>
+</body>
+</html>
