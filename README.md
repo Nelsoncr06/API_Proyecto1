@@ -63,6 +63,7 @@ Los endpoints utilizan el formato JSON para recibir y devolver información. Las
 {
   "idUsuario": 3,
   "correo": "carlos.actualizado@example.com",
+  "contrasena":"1234",
   "idRol": 1,
   "nombre": "Carlos Actualizado",
   "apellido1": "Rodríguez",
